@@ -1,5 +1,16 @@
-<h1>Hello, World!</h1>
+<!DOCTYPE html>
+<html>
 
-<?php phpinfo(); ?>
+<head>
+    <meta charset="utf-8">
+    <title>index.php</title>
+</head>
 
-<h1>Hello, World!</h1>
+<body>
+    <form method="POST" action="readfile.php">
+        Key: <input type="text" name="key" />
+        <input type="submit" />
+    </form>
+</body>
+
+</html>
