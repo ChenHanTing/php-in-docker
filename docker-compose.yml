@@ -1,5 +1,5 @@
-version: "3"
-services:
+version: "3"  # 目前使用的版本，可以參考官網：
+services:     # services 關鍵字後面列出 web, php, redis, mysql
   web:
     image: nginx:latest
     ports:
@@ -7,8 +7,17 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/nginx.conf
       - ./app:/app
+      - ./composer.json:/app/composer.json:cached
+      - ./composer.lock:/app/composer.lock:cached
+      - ./Configuration/:/app/Configuration/:cached
+      - ./DistributionPackages/:/app/DistributionPackages/:cached
+      # if you work on other packages, you need to add them here.
+
+      # WARNING: you need to add all packages from Distribution packages here ONE BY ONE, see the notice below for explanation.
+      - ./Packages/Sites/:/app/Packages/Sites/:cached
+
   php:
-    build:
+    build:                        # Build 在同一資料夾的 Dockerfile（描述 Image 要組成的 yaml 檔案）成 container
       context: .
       dockerfile: ./Dockerfile
     volumes:
@@ -23,6 +32,7 @@ services:
     volumes:
       - mysqldata:/var/lib/mysql
     ports:
-      - 3306:3306
+      - 3306:3306                 # 外部露出開放的 port 對應到 docker container 的 port
+
 volumes:
   mysqldata: {}

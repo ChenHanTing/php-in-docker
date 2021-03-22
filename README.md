@@ -1,4 +1,4 @@
-### 啟用與卸載
+#### 啟用與卸載
 
 - 啟用：
 
@@ -12,41 +12,29 @@
   docker-compose down
   ````
 
-- Example:
+#### 參考資料
 
-  ````json
-  [
-    {id: 1, key: key1, val: val1},
-    {id: 1, key: key2, val: val2},
-    {id: 1, key: key3, val: val3},
-  ]
+- Php with Functional Programming
 
-    0      1     2
-  [key1, key2, key3],
-  [val1, val2, val3]
-    0      1     2
+  ````txt
+  https://dinos80152.wordpress.com/2015/06/28/functional-programming-in-php-lambda/
+  ````
 
- [
-    {
-      name: 'Aragorn',
-      race: 'Human',
-    },
-    {
-      name: 'Legolas',
-      race: 'Elf',
-    },
-    {
-      name: 'Gimli',
-      race: 'Dwarf',
-    },
-  ]
-````
+- Php RESTful
 
-````php
-foreach ($characters as $character) {
-	echo $character->name . '<br>';
-}
+  ````txt
+  https://developer.okta.com/blog/2019/03/08/simple-rest-api-php
+  ````
 
-Aragorn, Legolas, Gimli
-````
+- Php with docker
+
+  ````txt
+  1. https://semaphoreci.com/community/tutorials/dockerizing-a-php-application
+  2. https://docs.neos.io/cms/installation-development-setup/docker-and-docker-compose-setup
+  3. https://gist.github.com/andyshinn/e2c428f2cd234b718239
+  ````
+
+  
+
+
 

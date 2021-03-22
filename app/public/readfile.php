@@ -1,5 +1,13 @@
 <?php
 $data = [];
+$eachData = function($data) {
+  array('key' => 1, 'value' => 2);
+  $vegetables['corn'] = 'yellow';
+  $vegetables['beet'] = 'red';
+
+  return $vegetables;
+};
+
 $handle = fopen('data.txt', 'r');
 if ($handle) {
   while (($line = fgets($handle)) !== false) {
@@ -11,6 +19,7 @@ if ($handle) {
 
 switch ($_SERVER['REQUEST_METHOD']) {
   case 'GET':
+    // $response = json_encode(array_map($eachData, $data));
     $response = json_encode($data);
     echo $response;
     break;
